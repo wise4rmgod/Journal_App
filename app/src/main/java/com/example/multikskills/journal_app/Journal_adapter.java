@@ -77,10 +77,10 @@ public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyView
             holder.message.setText(journals.getMessage());
             holder.date.setText(journals.getDate());
 
-          /**  holder.itemView.setOnClickListener(new View.OnClickListener() {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                  //  Intent i = new Intent(mContext, Viewentries.class);
+                    Intent i = new Intent(mContext, ViewEntryActivity .class);
                     //pass data though intent using puExtra
                     i.putExtra("title", journals.getTitle());
                     i.putExtra("message",journals.getMessage());
@@ -89,11 +89,11 @@ public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyView
                     mContext.startActivity(i);
 
                 }
-            });  **/
+            });
 
 
             //Click listener of button delete
-         /**   holder.delete.setOnClickListener(new View.OnClickListener() {
+            holder.delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //point databaseReference to Movies
@@ -108,7 +108,7 @@ public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyView
                     Toast.makeText(mContext, "Item Deleted", Toast.LENGTH_SHORT).show();
 
                 }
-            });  **/
+            });
 
             //Click listener of Button Edit
           holder.edit.setOnClickListener(new View.OnClickListener() {
