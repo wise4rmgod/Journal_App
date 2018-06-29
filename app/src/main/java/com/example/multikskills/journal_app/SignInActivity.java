@@ -1,3 +1,20 @@
+/*
+ * Copyright 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
 package com.example.multikskills.journal_app;
 
 import android.content.Intent;
@@ -14,6 +31,18 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.wang.avi.AVLoadingIndicatorView;
 
 public class SignInActivity extends AppCompatActivity {
@@ -24,10 +53,10 @@ public class SignInActivity extends AppCompatActivity {
     private static final String TAG = "wisejournal";
 
     //creating a GoogleSignInClient object
-  //  GoogleSignInClient mGoogleSignInClient;
+    GoogleSignInClient mGoogleSignInClient;
 
     //And also a Firebase Auth object
-  //  FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     AVLoadingIndicatorView avi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +66,7 @@ public class SignInActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //first we intialized the FirebaseAuth object
-     /**   mAuth = FirebaseAuth.getInstance();
+      mAuth = FirebaseAuth.getInstance();
         avi= findViewById(R.id.avi);
         //Then we need a GoogleSignInOptions object
         //And we need to build it as below
@@ -73,7 +102,7 @@ public class SignInActivity extends AppCompatActivity {
         //and take the user to profile activity
         if (mAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(this, Home.class));
+            startActivity(new Intent(this, ViewAllEntryActivity.class));
         }
     }
 
@@ -94,7 +123,7 @@ public class SignInActivity extends AppCompatActivity {
                 //authenticating with firebase
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -114,7 +143,7 @@ public class SignInActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithCredential:success");
                             avi.hide();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent= new Intent(MainActivity.this,Home.class);
+                            Intent intent= new Intent(SignInActivity.this,ViewAllEntryActivity.class);
                             startActivity(intent);
 
                             Toast.makeText(SignInActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
@@ -139,8 +168,8 @@ public class SignInActivity extends AppCompatActivity {
 
         //starting the activity for result
         startActivityForResult(signInIntent, RC_SIGN_IN);
-    }  **/
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

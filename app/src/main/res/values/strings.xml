@@ -20,4 +20,5 @@
     am an android developer all thanks to Andela Nigeria.The programming language i work with are ,kotlin,java,
     </string>
     <string name="title_activity_editentry">Editentry</string>
+    <string name="title_activity_view_all_entry">ViewAllEntryActivity</string>
 </resources>
