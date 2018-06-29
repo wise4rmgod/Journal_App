@@ -111,10 +111,10 @@ public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyView
             });  **/
 
             //Click listener of Button Edit
-        /**   holder.edit.setOnClickListener(new View.OnClickListener() {
+          holder.edit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(mContext, Editentry.class);
+                    Intent i = new Intent(mContext, EditEntryActivity.class);
                     //pass data though intent using puExtra
                     i.putExtra("title", journals.getTitle());
                     i.putExtra("message",journals.getMessage());
@@ -122,7 +122,7 @@ public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyView
                     i.putExtra("key", journals.getKey());
                     mContext.startActivity(i);
                 }
-            });  **/
+            });
         }
 
         @Override
