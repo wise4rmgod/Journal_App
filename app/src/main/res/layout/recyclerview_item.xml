@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/date"
-            android:text="@string/title"
             android:maxLines="1"
             android:maxLength="10"
             android:ellipsize="end"
