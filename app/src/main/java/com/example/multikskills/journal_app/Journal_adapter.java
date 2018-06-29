@@ -47,7 +47,7 @@ public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyView
             public MyViewHolder(View view) {
                 super(view);
                 //initialize buttons and TextViews
-                title =  view.findViewById(R.id.title);
+               // title =  view.findViewById(R.id.title);
                 message =  view.findViewById(R.id.message);
                 date =  view.findViewById(R.id.date);
                 delete=view.findViewById(R.id.delete);
@@ -73,7 +73,7 @@ public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyView
         public void onBindViewHolder(MyViewHolder holder, final int position) {
 
             final Journal journals = journal.get(position);
-            holder.title.setText(journals.getTitle());
+         //   holder.title.setText(journals.getTitle());
             holder.message.setText(journals.getMessage());
             holder.date.setText(journals.getDate());
 

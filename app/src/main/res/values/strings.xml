@@ -21,4 +21,5 @@
     </string>
     <string name="title_activity_editentry">Editentry</string>
     <string name="title_activity_view_all_entry">ViewAllEntryActivity</string>
+    <string name="title_activity_add_entry">AddEntryActivity</string>
 </resources>

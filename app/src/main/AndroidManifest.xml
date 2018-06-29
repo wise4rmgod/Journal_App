@@ -22,6 +22,10 @@
         <activity
             android:name=".ViewAllEntryActivity"
             android:label="@string/title_activity_view_all_entry"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddEntryActivity"
+            android:label="@string/title_activity_add_entry"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
