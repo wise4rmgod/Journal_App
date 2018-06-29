@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "763352806411",
+    "firebase_url": "https://journalmobileapp-15ce6.firebaseio.com",
+    "project_id": "journalmobileapp-15ce6",
+    "storage_bucket": "journalmobileapp-15ce6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763352806411:android:6b6ae56416fd137b",
+        "android_client_info": {
+          "package_name": "com.example.multikskills.journal_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763352806411-ibcjt0rucasf4s4estcvcijfgr91nhm2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.multikskills.journal_app",
+            "certificate_hash": "20cb30554fc473f5dd611bea7d5b7fdad0f2fe2e"
+          }
+        },
+        {
+          "client_id": "763352806411-ucdoi9a4k11ugjqujogbjj5n7eddmpja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV5EUxmdfg8ewVSK6yu8nyo6XckvbA47o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763352806411-ucdoi9a4k11ugjqujogbjj5n7eddmpja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763352806411:android:a54ea6eaa909a8ae",
+        "android_client_info": {
+          "package_name": "com.example.multikskills.journalmobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763352806411-jun7v20novu5iltv9bevn5godbnr7a5a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.multikskills.journalmobileapp",
+            "certificate_hash": "20cb30554fc473f5dd611bea7d5b7fdad0f2fe2e"
+          }
+        },
+        {
+          "client_id": "763352806411-ucdoi9a4k11ugjqujogbjj5n7eddmpja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV5EUxmdfg8ewVSK6yu8nyo6XckvbA47o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763352806411-ucdoi9a4k11ugjqujogbjj5n7eddmpja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763352806411:android:d52eae7dd70d45ee",
+        "android_client_info": {
+          "package_name": "com.example.multikskills.wisdomjournal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763352806411-uat81ej7ndeu7oqoapupb53tkn0eflfp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.multikskills.wisdomjournal",
+            "certificate_hash": "20cb30554fc473f5dd611bea7d5b7fdad0f2fe2e"
+          }
+        },
+        {
+          "client_id": "763352806411-ucdoi9a4k11ugjqujogbjj5n7eddmpja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV5EUxmdfg8ewVSK6yu8nyo6XckvbA47o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763352806411-ucdoi9a4k11ugjqujogbjj5n7eddmpja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

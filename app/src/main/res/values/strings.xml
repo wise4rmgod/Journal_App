@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Journal_App</string>
+    <string name="action_settings">About Us</string>
+    <string name="toolbar_journal">Wise Journal</string>
+    <string name="description">image for toolbar design</string>
+    <string name="sign_in">Account Signin</string>
+    <string name="gsignin">Google Sign in</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_addentry">Addentry</string>
+    <string name="addentry">Add Entry</string>
+    <string name="message">Type Your Message</string>
+    <string name="title">Title</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="time">Time</string>
+    <string name="topic">Title</string>
+    <string name="editentry">Edit Entry</string>
+    <string name="aboutme">I am nwokocha wisdom maduabuchi from imo state,i graduated from the federal polytechnic nekede as a computer science students,
+    am an android developer all thanks to Andela Nigeria.The programming language i work with are ,kotlin,java,
+    </string>
+    <string name="title_activity_editentry">Editentry</string>
+</resources>
