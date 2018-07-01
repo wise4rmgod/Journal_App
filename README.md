@@ -22,14 +22,14 @@ What things you need to install the software and how to install them
 Import project into android studio and run on a device or emulator
 
 # Built With
-Android Studio  3.1.2 - IDE used
-Android SDK 27
-Firebase - DataBase/Cloud Storage/Authentication
+1.Android Studio  3.1.2 - IDE used
+2.Android SDK 27
+3.Firebase - DataBase/Cloud Storage/Authentication
 # Authors
-Nwokocha Wisdom Maduabuchi - Initial work - Journa_app
+Nwokocha Wisdom Maduabuchi - _Initial work - Journa_app
 # License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-Acknowledgments
+# Acknowledgments
 1.Google
 2.youtube
