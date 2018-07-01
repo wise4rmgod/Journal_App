@@ -67,7 +67,7 @@ public class SignInActivity extends AppCompatActivity implements MainMVP.view {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         loginpresenter = new Signinpresenter(this);
 

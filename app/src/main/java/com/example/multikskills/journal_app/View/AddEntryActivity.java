@@ -24,7 +24,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.multikskills.journal_app.AddentryMVP;
 import com.example.multikskills.journal_app.Model.Journal;
+import com.example.multikskills.journal_app.Presenter.Addentrypresenter;
 import com.example.multikskills.journal_app.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,38 +35,48 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class AddEntryActivity extends AppCompatActivity {
+public class AddEntryActivity extends AppCompatActivity implements AddentryMVP.view{
     DatabaseReference database;
     Button save;
     EditText title, message;
+    DateFormat dateFormat;
+    Date date;
+    private Addentrypresenter addentrypresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_entry);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        addentrypresenter = new Addentrypresenter(this);
 //point databasereference to Movies
         database = FirebaseDatabase.getInstance().getReference("journal");
         //Initalize Editexts and button
         title = (EditText) findViewById(R.id.title);
         message = (EditText) findViewById(R.id.message);
         save = (Button) findViewById(R.id.save);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        final String strDate = dateFormat.format(date).toString();
+         dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+         date = new Date();
+
         //Clicklistener of ADD button
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //add etails to MovieDetails object
-                Journal m = new Journal(title.getText().toString(), message.getText().toString(),strDate);
-                //push object to database to add in a new node
-                database.push().setValue(m);
-                Toast.makeText(getApplicationContext(), "Item Added", Toast.LENGTH_SHORT).show();
-                finish();
+             addentrypresenter.buttonsave();
             }
         });
 
     }
 
+    @Override
+    public void showsave() {
+
+        final String strDate = dateFormat.format(date).toString();
+        //add etails to MovieDetails object
+        Journal m = new Journal(title.getText().toString(), message.getText().toString(),strDate);
+        //push object to database to add in a new node
+        database.push().setValue(m);
+        Toast.makeText(getApplicationContext(), "Item Added", Toast.LENGTH_SHORT).show();
+        finish();
+    }
 }
