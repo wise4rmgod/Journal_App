@@ -38,7 +38,7 @@ public class EditEntryActivity extends AppCompatActivity implements EditentryMVP
         database = FirebaseDatabase.getInstance().getReference("journal");
 
         //initialize edittext and button
-        title = (EditText) findViewById(R.id.title);
+       // title = (EditText) findViewById(R.id.title);
         message = (EditText) findViewById(R.id.message);
         modify = (Button) findViewById(R.id.modify);
 
@@ -49,7 +49,7 @@ public class EditEntryActivity extends AppCompatActivity implements EditentryMVP
           key = getIntent().getStringExtra("key");
 
         //show values in Edittexts
-        title.setText(title1);
+       // title.setText(title1);
         message.setText(message1);
          dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
          date = new Date();
@@ -71,7 +71,7 @@ public class EditEntryActivity extends AppCompatActivity implements EditentryMVP
     public void showeditsave() {
         final String strDate = dateFormat.format(date).toString();
         //new values to be added to database
-        Journal m = new Journal(title.getText().toString(), message.getText().toString(),strDate);
+        Journal m = new Journal(message.getText().toString().toString(),strDate);
         //add new values to child key
         database.child(key).setValue(m);
         Toast.makeText(getApplicationContext(), "Changed", Toast.LENGTH_SHORT).show();

@@ -21,9 +21,9 @@ public class Journal {
     public Journal() {
     }
 
-    public Journal(String title, String message, String date) {
-        this.title = title;
-        this.message = message;
+    public Journal(String message, String date) {
+        this.title = message;
+
         this.date =date;
 
 

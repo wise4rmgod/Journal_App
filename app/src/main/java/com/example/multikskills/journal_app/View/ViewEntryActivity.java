@@ -21,21 +21,20 @@ import com.google.firebase.database.FirebaseDatabase;
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         //initialize edittext and button
-        title =  findViewById(R.id.title);
-      //  message =  findViewById(R.id.message);
+       // title =  findViewById(R.id.title);
+        message =  findViewById(R.id.message);
         date   = findViewById(R.id.date);
 
 //getExtra is used to fetch data passed through intent
-        final String title1 = getIntent().getStringExtra("title");
-     //   String message1 = getIntent().getStringExtra("message");
+      //  final String title1 = getIntent().getStringExtra("title");
+        String message1 = getIntent().getStringExtra("message");
         String date1 = getIntent().getStringExtra("date");
         final String key = getIntent().getStringExtra("key");
 
         //show values in Edittexts
-        title.setText(title1);
-     //   message.setText(message1);
+       // title.setText(title1);
+        message.setText(message1);
         date.setText(date1);
     }
 

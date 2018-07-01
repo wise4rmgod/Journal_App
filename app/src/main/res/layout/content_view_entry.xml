@@ -22,14 +22,7 @@
             android:textAlignment="center"
             android:textColor="@color/darkblue"
             android:textSize="20sp" />
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/darkblue"/>
+
         <TextView
             android:id="@+id/message"
             android:layout_width="match_parent"

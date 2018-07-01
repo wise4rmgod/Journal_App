@@ -38,7 +38,7 @@ import java.util.Date;
 public class AddEntryActivity extends AppCompatActivity implements AddentryMVP.view{
     DatabaseReference database;
     Button save;
-    EditText title, message;
+    EditText title;
     DateFormat dateFormat;
     Date date;
     private Addentrypresenter addentrypresenter;
@@ -53,7 +53,7 @@ public class AddEntryActivity extends AppCompatActivity implements AddentryMVP.v
         database = FirebaseDatabase.getInstance().getReference("journal");
         //Initalize Editexts and button
         title = (EditText) findViewById(R.id.title);
-        message = (EditText) findViewById(R.id.message);
+       // message = (EditText) findViewById(R.id.message);
         save = (Button) findViewById(R.id.save);
          dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
          date = new Date();
@@ -73,7 +73,7 @@ public class AddEntryActivity extends AppCompatActivity implements AddentryMVP.v
 
         final String strDate = dateFormat.format(date).toString();
         //add etails to MovieDetails object
-        Journal m = new Journal(title.getText().toString(), message.getText().toString(),strDate);
+        Journal m = new Journal(title.getText().toString(),strDate);
         //push object to database to add in a new node
         database.push().setValue(m);
         Toast.makeText(getApplicationContext(), "Item Added", Toast.LENGTH_SHORT).show();

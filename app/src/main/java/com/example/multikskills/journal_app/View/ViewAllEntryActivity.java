@@ -29,17 +29,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.multikskills.journal_app.Adapter.Journal_adapter;
-import com.example.multikskills.journal_app.MainMVP;
 import com.example.multikskills.journal_app.Model.Journal;
-import com.example.multikskills.journal_app.Presenter.Signinpresenter;
 import com.example.multikskills.journal_app.Presenter.Viewallentrypresenter;
 import com.example.multikskills.journal_app.R;
 import com.example.multikskills.journal_app.ViewallentryMVP;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -53,43 +49,41 @@ import java.util.List;
 import static android.widget.LinearLayout.VERTICAL;
 
 public class ViewAllEntryActivity extends AppCompatActivity implements ViewallentryMVP.view {
-    //a constant for detecting the login intent result
-    private static final int RC_SIGN_IN = 234;
-
-    //Tag for the logs optional
-    private static final String TAG = "wisejournal";
 
     FloatingActionButton fab;
+    static boolean calledAlready = false;
 
     private Viewallentrypresenter viewallentrypresenter;
 
-    //creating a GoogleSignInClient object
-    GoogleSignInClient mGoogleSignInClient;
-    static {
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-    }
+
+
     //And also a Firebase Auth object
     FirebaseAuth mAuth;
     private List<Journal> mjournal = new ArrayList<Journal>();
     private RecyclerView recyclerView;
     private Journal_adapter mAdapter;
     DatabaseReference database;
-    Button add;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_all_entry);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setLogo(R.mipmap.ic_launcher_round);
         getSupportActionBar().setTitle("  Journal App");
+
         //first we intialized the FirebaseAuth object
         mAuth = FirebaseAuth.getInstance();
         viewallentrypresenter = new Viewallentrypresenter(this);
-
-
+        if (!calledAlready)
+        {
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+            calledAlready = true;
+        }
 //initialized fab button
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       fab = findViewById(R.id.fab);
         //Click listener of ADD NEW button
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +93,8 @@ public class ViewAllEntryActivity extends AppCompatActivity implements Viewallen
         });
 
         // initialized recyclerview
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
+
 
         //initialize Adapter
         mAdapter = new Journal_adapter(getApplicationContext(), mjournal);

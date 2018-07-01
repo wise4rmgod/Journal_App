@@ -150,6 +150,7 @@ public class SignInActivity extends AppCompatActivity implements MainMVP.view {
                             avi.hide();
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent= new Intent(SignInActivity.this,ViewAllEntryActivity.class);
+                            intent.putExtra("id",mAuth.getUid());
                             startActivity(intent);
 
                             Toast.makeText(SignInActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
