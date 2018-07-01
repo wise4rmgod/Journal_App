@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.multikskills.journal_app;
+package com.example.multikskills.journal_app.Adapter;
 
 
 import android.content.Context;
@@ -27,6 +27,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.multikskills.journal_app.Model.Journal;
+import com.example.multikskills.journal_app.R;
+import com.example.multikskills.journal_app.View.EditEntryActivity;
+import com.example.multikskills.journal_app.View.ViewEntryActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -80,7 +84,7 @@ public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyView
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(mContext, ViewEntryActivity .class);
+                    Intent i = new Intent(mContext, ViewEntryActivity.class);
                     //pass data though intent using puExtra
                     i.putExtra("title", journals.getTitle());
                     i.putExtra("message",journals.getMessage());

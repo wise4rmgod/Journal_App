@@ -15,21 +15,30 @@
  */
 
 
-package com.example.multikskills.journal_app;
+package com.example.multikskills.journal_app.View;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.multikskills.journal_app.Adapter.Journal_adapter;
+import com.example.multikskills.journal_app.MainMVP;
+import com.example.multikskills.journal_app.Model.Journal;
+import com.example.multikskills.journal_app.Presenter.Signinpresenter;
+import com.example.multikskills.journal_app.Presenter.Viewallentrypresenter;
+import com.example.multikskills.journal_app.R;
+import com.example.multikskills.journal_app.ViewallentryMVP;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -43,12 +52,16 @@ import java.util.List;
 
 import static android.widget.LinearLayout.VERTICAL;
 
-public class ViewAllEntryActivity extends AppCompatActivity {
+public class ViewAllEntryActivity extends AppCompatActivity implements ViewallentryMVP.view {
     //a constant for detecting the login intent result
     private static final int RC_SIGN_IN = 234;
 
     //Tag for the logs optional
     private static final String TAG = "wisejournal";
+
+    FloatingActionButton fab;
+
+    private Viewallentrypresenter viewallentrypresenter;
 
     //creating a GoogleSignInClient object
     GoogleSignInClient mGoogleSignInClient;
@@ -72,6 +85,7 @@ public class ViewAllEntryActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("  Journal App");
         //first we intialized the FirebaseAuth object
         mAuth = FirebaseAuth.getInstance();
+        viewallentrypresenter = new Viewallentrypresenter(this);
 
 
 //initialized fab button
@@ -140,6 +154,49 @@ public class ViewAllEntryActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_viewallentry, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+
+            mAuth.signOut();
+            Toast.makeText(ViewAllEntryActivity.this,"Signed Out",Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(ViewAllEntryActivity.this,SignInActivity.class);
+            startActivity(intent);
+            /**   mGoogleSignInClient.signOut()
+             .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+            // ...
+            Toast.makeText(Home.this,"Signed Out",Toast.LENGTH_SHORT).show();
+            Intent intent= new Intent(Home.this,MainActivity.class);
+            startActivity(intent);
+            }
+            }); **/
 
 
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+    @Override
+    public void showentry() {
+
+    }
 }

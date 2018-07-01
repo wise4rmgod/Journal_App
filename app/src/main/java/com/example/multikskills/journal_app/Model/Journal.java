@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.multikskills.journal_app;
+package com.example.multikskills.journal_app.Model;
 
 public class Journal {
 

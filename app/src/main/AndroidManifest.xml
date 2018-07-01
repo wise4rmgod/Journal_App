@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SignInActivity"
+            android:name=".View.SignInActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,19 +20,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ViewAllEntryActivity"
+            android:name=".View.ViewAllEntryActivity"
             android:label="@string/title_activity_view_all_entry"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddEntryActivity"
+            android:name=".View.AddEntryActivity"
             android:label="@string/title_activity_add_entry"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EditEntryActivity"
+            android:name=".View.EditEntryActivity"
             android:label="@string/title_activity_edit_entry"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ViewEntryActivity"
+            android:name=".View.ViewEntryActivity"
             android:label="@string/title_activity_view_entry"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

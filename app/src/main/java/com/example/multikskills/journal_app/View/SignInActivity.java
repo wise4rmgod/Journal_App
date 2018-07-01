@@ -15,13 +15,11 @@
  */
 
 
-package com.example.multikskills.journal_app;
+package com.example.multikskills.journal_app.View;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -31,6 +29,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.multikskills.journal_app.MainMVP;
+import com.example.multikskills.journal_app.Presenter.Signinpresenter;
+import com.example.multikskills.journal_app.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -45,15 +46,19 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.wang.avi.AVLoadingIndicatorView;
 
-public class SignInActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity implements MainMVP.view {
     //a constant for detecting the login intent result
     private static final int RC_SIGN_IN = 234;
 
     //Tag for the logs optional
     private static final String TAG = "wisejournal";
 
+    Button btn;
+
     //creating a GoogleSignInClient object
     GoogleSignInClient mGoogleSignInClient;
+
+    private Signinpresenter loginpresenter;
 
     //And also a Firebase Auth object
     FirebaseAuth mAuth;
@@ -64,6 +69,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        loginpresenter = new Signinpresenter(this);
 
         //first we intialized the FirebaseAuth object
       mAuth = FirebaseAuth.getInstance();
@@ -78,12 +84,12 @@ public class SignInActivity extends AppCompatActivity {
         //Then we will get the GoogleSignInClient object from GoogleSignIn class
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        Button btn=findViewById(R.id.signin);
+        btn=findViewById(R.id.signin);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                avi.show();
-                signIn();
+
+                loginpresenter.buttonclicksigin();
             }
         });
 
@@ -161,14 +167,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
 
-    //this method is called on click
-    private void signIn() {
-        //getting the google signin intent
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
 
-        //starting the activity for result
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
 
 
     @Override
@@ -191,5 +190,17 @@ public class SignInActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    @Override
+    public void showsign() {
+        avi.show();
+        //getting the google signin intent
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+
+        //starting the activity for result
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 }
