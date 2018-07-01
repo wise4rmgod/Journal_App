@@ -1,6 +1,8 @@
 # Journal_App
 this is an android app given to me by andela as my final challenge for ALC 3.0 #7DaysofCodeChallenge,
-its a journal app that help users save,view,edit and delete there thoughts and feelings.Download the apk file
+its a journal app that help users save,view,edit and delete there thoughts and feelings.
+
+[Download the apk file](https://drive.google.com/open?id=1-JJHEow33FLEO3uj4ivpcRvs6r7h3L8i)
 
 # What you need
 The Journal App uses the following dependencies:
@@ -22,9 +24,9 @@ The Journal App uses the following dependencies:
  the app is created using the mvp architecture,each screen is implemented using the following classes and interfaces:
 
 # Built With
-Android Studio 3.1.2
-Java 8
-Gradle 4.4
+1. Android Studio 3.1.2
+2. Java 8
+3. Gradle 4.4
 # Author 
 Nwokocha wisdom maduabchi
 
