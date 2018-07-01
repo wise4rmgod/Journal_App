@@ -94,8 +94,7 @@ public class ViewAllEntryActivity extends AppCompatActivity implements Viewallen
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ViewAllEntryActivity.this,AddEntryActivity.class);
-                startActivity(intent);
+                viewallentrypresenter.addentry();
             }
         });
 
@@ -175,17 +174,6 @@ public class ViewAllEntryActivity extends AppCompatActivity implements Viewallen
             Toast.makeText(ViewAllEntryActivity.this,"Signed Out",Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(ViewAllEntryActivity.this,SignInActivity.class);
             startActivity(intent);
-            /**   mGoogleSignInClient.signOut()
-             .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-            // ...
-            Toast.makeText(Home.this,"Signed Out",Toast.LENGTH_SHORT).show();
-            Intent intent= new Intent(Home.this,MainActivity.class);
-            startActivity(intent);
-            }
-            }); **/
-
 
             return true;
         }
@@ -197,6 +185,7 @@ public class ViewAllEntryActivity extends AppCompatActivity implements Viewallen
 
     @Override
     public void showentry() {
-
+        Intent intent=new Intent(ViewAllEntryActivity.this,AddEntryActivity.class);
+        startActivity(intent);
     }
 }

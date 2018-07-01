@@ -14,6 +14,6 @@ public class Viewallentrypresenter implements ViewallentryMVP.presenter {
 
     @Override
     public void addentry() {
-
+      view.showentry();
     }
 }

@@ -36,7 +36,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyViewHolder> {
+public class   Journal_adapter extends RecyclerView.Adapter<Journal_adapter.MyViewHolder> {
 
         private List<Journal> journal;
         public Context mContext;
